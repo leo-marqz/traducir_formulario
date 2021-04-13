@@ -6,6 +6,7 @@
   $color = "";
   $message = "";
 
+
   $language = "-- . -- . --";
   $email = "-- . -- . --";
   $first_name = "-- . -- . --";
@@ -13,6 +14,9 @@
 
   if(isset($_POST['send_data'])){
     $language = $_POST['Language'];
+
+    $language_select = $_POST['Language'];
+    $data = $process->Language($language);
     
 
     if($_POST['email'] == ""){
@@ -75,7 +79,7 @@
         $email = $_POST['email'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
-        $data = $process->Language($language);
+        // $data = $process->Language($language);
         $color = "success";
         
         if($_POST['Language'] == "en"){
@@ -135,6 +139,7 @@
             <div class="m-3 d-flex justify-content-end">
               <label for="email" class="text-secondary me-1"><?php echo $data['Title_Languaje']; ?></label>
               <select name="Language"  class="text-secondary">
+                <option value="<?php echo $language_select; ?>" >---</option>
                 <option value="en">English</option>
                 <option value="es">Spanish</option>
                 <option value="it">Italian</option>
