@@ -5,6 +5,7 @@
   $data = $process->Language('en');
   $color = "";
   $message = "";
+  $language_select = "en";
 
 
   $language = "-- . -- . --";
